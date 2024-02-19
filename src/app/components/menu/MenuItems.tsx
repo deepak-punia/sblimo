@@ -73,7 +73,7 @@ const MenuItems = () => {
       <li
         className="link-style"
         data-replace="Services"
-        onClick={() => scrollToPercent(46)}
+        onClick={() => scrollToPercent(13)}
       >
         {' '}
         <span>Services</span>
@@ -81,7 +81,7 @@ const MenuItems = () => {
       <li
         className="link-style"
         data-replace="Price"
-        onClick={() => scrollToPercent(74)}
+        onClick={() => scrollToPercent(47)}
       >
         {' '}
         <span>Price</span>
@@ -89,7 +89,7 @@ const MenuItems = () => {
       <li
         className="link-style"
         data-replace="Contact"
-        onClick={() => scrollToPercent(91)}
+        onClick={() => scrollToPercent(89)}
       >
         {' '}
         <span>Contact</span>

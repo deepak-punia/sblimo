@@ -147,7 +147,7 @@ export default function Home() {
             </p>
             <div className="flex flex-col mb-8 lg:mb-16 space-y-4 sm:flex-row sm:justify-center sm:space-y-0 sm:space-x-4">
               <a
-                href="#"
+                href="#services"
                 className="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-gold rounded-lg bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 dark:focus:ring-primary-900"
                 data-aos="fade-up"
                 data-aos-delay="100"
@@ -167,7 +167,7 @@ export default function Home() {
                 </svg>
               </a>
               <a
-                href="#"
+                href="#contactform"
                 className="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center gap-2 text-white rounded-lg border border-gray-300 hover:bg-gray-100 hover:text-gold focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800"
                 data-aos="fade-up"
                 data-aos-delay="150"
@@ -286,13 +286,13 @@ export default function Home() {
                     </p>
                   </div>
                 </div>
-                <button
+                <a href='#contactform'><button
                   className="main-button mt-7"
                   data-aos="fade-up"
                   data-aos-delay="250"
                 >
                   <span>Contact Us</span>
-                </button>
+                </button></a>
               </div>
             </div>
           </div>
@@ -321,13 +321,13 @@ export default function Home() {
                 <a href="tel:+12363356123">+1 236-335-6123</a>
               </h2>
               <div className="mt-6">
-                <button
+              <a href='#contactform'><button
                   className="main-button mt-4"
                   data-aos="fade-up"
                   data-aos-delay="150"
                 >
                   <span>Book Now!</span>
-                </button>
+                </button></a>
               </div>
             </div>
           </div>
@@ -360,11 +360,11 @@ export default function Home() {
                   data-aos-delay="100"
                 >
                   <a
-                    href="http://limme.like-themes.com/rentals/cadillac-limousine-xts-2-2/"
+                    href="#contactform"
                     className="block"
                   >
                     <img
-                      src="https://images.carprices.com/pricebooks_data/usa/colorized/2024/GMC/View2/Yukon_XL/SLE/TC10906_G6M.png"
+                      src="/images/gmcview.png"
                       alt="GMC Yukon"
                       className="w-full h-auto rounded"
                     />
@@ -375,7 +375,7 @@ export default function Home() {
                   <div>
                     <h5 className="font-bold text-3xl mt-2">
                       <a
-                        href="http://limme.like-themes.com/rentals/cadillac-limousine-xts-2-2/"
+                        href="#contactform"
                         className="text-gold "
                       >
                         GMC Yukon
@@ -425,7 +425,7 @@ export default function Home() {
                         <span className="block w-4 h-4 bg-gray-300 rounded-full"></span>
                       </div>
                     </div>
-                    <a href="http://limme.like-themes.com/rentals/cadillac-limousine-xts-2-2/">
+                    <a href="#contactform">
                       <button className="main-button-2 mt-5">
                         <span>Book Now!</span>
                       </button>
@@ -440,7 +440,7 @@ export default function Home() {
                   data-aos-delay="100"
                 >
                   <a
-                    href="http://limme.like-themes.com/rentals/cadillac-limousine-xts-2-2/"
+                    href="#contactform"
                     className="block"
                   >
                     <img
@@ -455,7 +455,7 @@ export default function Home() {
                   <div>
                     <h5 className="font-bold text-3xl mt-2">
                       <a
-                        href="http://limme.like-themes.com/rentals/cadillac-limousine-xts-2-2/"
+                        href="#contactform"
                         className="text-gold "
                       >
                         Mitsubishi Outlander
@@ -506,7 +506,7 @@ export default function Home() {
                         <span className="block w-4 h-4 bg-gray-300 rounded-full"></span>
                       </div>
                     </div>
-                    <a href="http://limme.like-themes.com/rentals/cadillac-limousine-xts-2-2/">
+                    <a href="#contactform">
                       <button className="main-button-2 mt-5">
                         <span>Book Now!</span>
                       </button>
@@ -657,7 +657,7 @@ export default function Home() {
         </section>
 
         {/* Contact us */}
-        <section id="contactus" className=" w-full  py-28">
+        <section id="contactform" className=" w-full  py-28">
           <div className="container mx-auto px-4">
             <Contactus />
           </div>

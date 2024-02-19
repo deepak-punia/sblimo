@@ -1117,6 +1117,7 @@ const Contactus = () => {
             onSubmit={handleSubmit}
             className="bg-gray-100 text-gray-900 rounded-sm shadow-sm p-8"
             data-aos="fade-up"
+            
           >
             <div className="mt-5 flex gap-3 flex-col md:flex-row">
               <div className="flex-1">

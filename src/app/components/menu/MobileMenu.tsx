@@ -94,17 +94,17 @@ const MobileMenu = () => {
           </span>
         </li>
         <li className="nav__item">
-          <span className="nav__link" onClick={() => scrollToPercent(38.5)}>
+          <span className="nav__link" onClick={() => scrollToPercent(6)}>
             Services
           </span>
         </li>
         <li className="nav__item">
-          <span className="nav__link" onClick={() => scrollToPercent(89)}>
+          <span className="nav__link" onClick={() => scrollToPercent(44)}>
           Price
           </span>
         </li>
         <li className="nav__item">
-          <span className="nav__link" onClick={() => scrollToPercent(97)}>
+          <span className="nav__link" onClick={() => scrollToPercent(79)}>
             Contact
           </span>
         </li>
