@@ -3,6 +3,32 @@ import { useState } from 'react';
 import { LuPhoneCall } from 'react-icons/lu';
 import Aos from '../Aos';
 
+function LoadingButton({ loading }: { loading: Boolean }) {
+
+
+  return (
+    <button type="submit" className="main-button mt-7" disabled>
+
+      <span className="loading loading-spinner loading-sm">Sending...</span>
+
+    </button>
+  );
+}
+
+function SubmitButton({ loading }: { loading: Boolean }) {
+
+
+  return (
+    <button type="submit" className="main-button mt-7" disabled={loading ? true : false}>
+      {loading ? (
+        <span className="loading loading-spinner loading-sm"></span>
+      ) : (
+        <span>SEND</span>
+      )}
+    </button>
+  );
+}
+
 const Contactus = () => {
   const [name, setName] = useState('');
   const [phone, setPhone] = useState('');
@@ -12,35 +38,63 @@ const Contactus = () => {
   const [dropOff, setDropOff] = useState('');
   const [vehicle, setVehicle] = useState('');
   const [message, setMessage] = useState('');
+  const [status, setStatus] = useState('');
+  const [statusmsg, setStatusmsg] = useState("");
+
+  const validatePhone = (phoneNum) => {
+
+    return phoneNum.match(
+      /^\+?([0-9]{3})\)?[ -]?([0-9]{3})[ -]?([0-9]{4})$/
+    );
+  }
+
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const formData = {
-      name,
-      phone,
-      date,
-      time,
-      pickUp,
-      dropOff,
-      vehicle,
-      message,
-    };
-
-    try {
-      const response = await fetch('/contact', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
-      });
-
-      if (!response.ok) throw new Error('Network response was not ok');
-      // Handle success here
-      console.log('Form submitted successfully');
-    } catch (error) {
-      // Handle errors here
-      console.error('Form submission error:', error);
+    if (!name || !phone || !date || !time) {
+      setStatus("error")
+      setStatusmsg("Please enter all details.")
+      return
     }
+    if (!validatePhone(phone)) {
+      setStatus("error")
+      setStatusmsg("Please enter a valid 10 digit phone number.")
+      return
+    }
+
+    setStatus("loading")
+
+    await fetch('/api/sendemail', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+
+      body: JSON.stringify({
+        name,
+        phone,
+        date,
+        time,
+        pickUp,
+        dropOff,
+        vehicle,
+        message,
+      }),
+    }).then(() => {
+      setStatus("success")
+      setStatusmsg("Your message has been sent successfully.")
+    }).catch((err) => {
+      setStatus("error")
+      setStatusmsg("Error! Please try again later..")
+    });
+    setName("")
+    setPhone("")
+    setDate("")
+    setTime("")
+    setPickUp("")
+    setDropOff("")
+    setVehicle("")
+    setMessage("")
+
   };
 
   return (
@@ -1228,10 +1282,16 @@ const Contactus = () => {
           "
               ></textarea>
             </div>
+            {status === "error" && <div className="bg-red-100 border-t border-b border-red-500 text-red-700 px-4 py-3 mt-4" role="alert">
+              <p className="font-bold">Error</p>
+              <p className="text-sm">{statusmsg}</p>
+            </div>}
+            {status === "success" && <div className="bg-green-100 border-t border-b border-green-500 text-green-700 px-4 py-3 mt-4" role="alert">
+              <p className="font-bold">Success</p>
+              <p className="text-sm">{statusmsg}</p>
+            </div>}
             <div className="mt-8">
-              <button type="submit" className="main-button mt-7">
-                <span>SEND</span>
-              </button>
+              {status === "loading" ? <LoadingButton loading={true} /> : <SubmitButton loading={false} />}
             </div>
           </form>
         </div>

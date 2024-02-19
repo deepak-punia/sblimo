@@ -370,7 +370,7 @@ export default function Home() {
                     />
                   </a>
                   <div className="text-3xl font-semibold mt-2">
-                    $1.9<span className="text-sm font-normal"> per KM</span>
+                    $600<span className="text-sm font-normal"> per Day</span>
                   </div>
                   <div>
                     <h5 className="font-bold text-3xl mt-2">
@@ -450,7 +450,7 @@ export default function Home() {
                     />
                   </a>
                   <div className="text-3xl font-semibold mt-2">
-                    $1.7<span className="text-sm font-normal"> per KM</span>
+                    $540<span className="text-sm font-normal"> per Day</span>
                   </div>
                   <div>
                     <h5 className="font-bold text-3xl mt-2">
@@ -799,7 +799,7 @@ export default function Home() {
           >
             <div className="flex items-center justify-center bg-gold rounded-full w-14 h-14 me-[-10px] z-[60]">
               <svg
-                className="w-6 h-6 text-white"
+                className="w-6 h-6 text-white scale-animation"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
